@@ -55,17 +55,17 @@ class Mailbox {
      * @throws Exception
 	 */
 	public function getImapStream($forceConnection = true) {
-		static $imapStream;
+		static $this->imapStream;
 		if($forceConnection) {
-			if($imapStream && (!is_resource($imapStream) || !imap_ping($imapStream))) {
+			if($this->imapStream && (!is_resource($this->imapStream) || !imap_ping($this->imapStream))) {
 				$this->disconnect();
-				$imapStream = null;
+				$this->imapStream = null;
 			}
-			if(!$imapStream) {
-				$imapStream = $this->initImapStream();
+			if(!$this->imapStream) {
+				$this->imapStream = $this->initImapStream();
 			}
 		}
-		return $imapStream;
+		return $this->imapStream;
 	}
 
 	protected function initImapStream() {
