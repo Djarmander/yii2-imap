@@ -11,13 +11,13 @@ Installation by composer
 ```composer
 {
     "require": {
-       "unyii2/yii2-imap": "dev-master"
+       "Djarmander/yii2-imap": "dev-master"
     }
 }
 
 Or
 
-$ composer require unyii2/yii2-imap "dev-master"
+$ composer require Djarmander/yii2-imap "dev-master"
 ```
 
 # Use as compnent
